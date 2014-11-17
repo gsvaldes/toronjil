@@ -49,7 +49,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'toronjil.urls'
-
+ 
 WSGI_APPLICATION = 'toronjil.wsgi.application'
 
 
