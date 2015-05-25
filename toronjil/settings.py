@@ -38,6 +38,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'morado',
+    'blog',
+    'django_markdown',
 )
 
 MIDDLEWARE_CLASSES = (
