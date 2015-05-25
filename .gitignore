@@ -1,3 +1,4 @@
 toronjil/db.sqlite3
 *.pyc
 toronjil/local_settings.py
+db.sqlite3
