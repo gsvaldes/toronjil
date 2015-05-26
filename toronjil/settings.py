@@ -27,8 +27,7 @@ TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = []
 
-TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
-STATICFILE_DIRS = [os.path.join(BASE_DIR, 'static')]
+
 
 # Application definition
 
@@ -77,13 +76,15 @@ USE_L10N = True
 
 USE_TZ = True
 
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+#STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 try:
     from local_settings import *
