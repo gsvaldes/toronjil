@@ -1,4 +1,12 @@
 from django.db import models
+from django.core.urlresolvers import reverse
+
+class Tag(models.Model):
+    slug = models.SlugField(max_length=200, unique=True)
+    
+    def __unicode__(self):
+        return self.slug
+
 
 class EntryQuerySet(models.QuerySet):
     def published(self):
@@ -12,12 +20,16 @@ class Entry(models.Model):
     publish = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
+    tags = models.ManyToManyField(Tag)
     
     objects = EntryQuerySet.as_manager()
     
     
     def __unicode__(self):
         return self.title
+        
+    def get_absolute_url(self):
+        return reverse("entry_detail", kwargs={"slug": self.slug})
         
         
     class Meta:
